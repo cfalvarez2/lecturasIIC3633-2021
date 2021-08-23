@@ -1,7 +1,7 @@
 
-##Titulo
+## Titulo
 
-###Subtítulo
+### Subtítulo
 
 **negrita** *cursiva* 
 
@@ -15,3 +15,5 @@ otra opinion interesando a favor o en contra
 me gusta ver mas el contenido su significado que tanta teoría
 
 Cierre
+
+## Collaborative
