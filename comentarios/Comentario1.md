@@ -1,19 +1,14 @@
+## Lectura - Collaborative Filtering Recommender Systems
 
-## Titulo
+Los autores del paper a evaluar hoy, nos describen el Sistema de Recomendación de Filtrado Colaborativo (CF) que es un sistema no personalizado que permite evaluar ítems utilizando la opinión de distintos usuarios. Primero nombra los distintos usos y funcionalidades que tiene este filtrado, y en qué dominio se desenvuelve de mejor forma. Luego realiza una comparación con el Filtrado Basado en Contenido (CBF), que se diferencia principalmente en las premisas, ya que en el caso de CF se basa en la premisa de que las personas con similares gustos calificarán los ítems de forma similar, en cambio el CBF se basa en que los ítems de similar contenido serán calificados de similar forma. Sin profundizar demasiado en este segundo algoritmo, nos amplia la mirada a que ambos puntos de vistas pueden ser **complementarios**, pese a que el CBF no permite capturar la calidad de los ítems, ayuda al momento de indentificar elementos que satisfacen la necesidad inmediata del usuario según un análisis del contenido.
+En cuanto a la teoría, el paper nos presenta dos tipos de algorítmos, los **no probabilísticos** y los **probabilísticos** dando énfasis en los algoritmos no probabilísticos llamados **Vecinos más cercanos**, que pueden ser basados en **usuario** o en **item**. El algoritmo vecinos más cercanos basado en el usuario, busca a los vecinos de un usuario, según la similaridad calculada por la correlación de Pearson, y generan una predicción a un item, basándose en los ratings de los usuarios vecinos. En cuanto a la matemática recomiendo ver directamente el paper, lo que es necesario destacar es que el algoritmo toma en consideración lo pesimista u optimista que puedan ser los usuarios, y ajusta el resultado según los promedios de los items que ha calificado cada usuario, para así tener en consideración a los usuario que acostumbran a calificar con números bajos y a los usuarios que acostumbran a calificar con números altos. Realizar el cálculo de los vecinos más cercanos es costoso ya que en necesario calcular la similitud con todos los usuarios, y en el texto se propone distintas alternativas para reducir el tiempo de procesamiento y el consumo de memoria. El algoritmo vecinos más cercanos basado en el item tiene una lógica similar al basado en usuarios, solo que genera las predicciones basado en las similitudes que tienen los ítems, es decir, en las calificaciones de un usuario para similares ítems. 
+Más adelante el paper aborda los problemas que pueden surgir en el sistema y las distintas métricas de evaluación al sistema. Después ahonda en las nuevas tendencias de interfaces de usuarios que permitan una mayor interacción con los datos, y que den más información sobre cómo proceden las recomendaciones y por último menciona los desafíos que vienen para el filtrado colaborativo en cuanto a la seguridad, privacidad, y confianza, además de preguntas que siguen abierta en el tema.
 
-### Subtítulo
+Dentro de los problemas que surgen en el sistema recomendador de CF, se menciona el sesgo que puede causar los items y usuarios que tienen pocas calificaciones y el ajuste que se puede realizar, convirtiéndolos en "entidades raramente calificadas". La técnicas que entregan son: 
+- Descartar aquellos datos que tengan menos de k valoraciones.
+- Calculando un valor esperado según el comportamiento del usuario o el item en cuestión.
+- Incorporar datos artificiales de manera previa basados en una distribución de probabilidad esperada.
 
-**negrita** *cursiva* 
+En mi opinión ninguna de las técnicas resuelve el problema de buena manera. Esto se debe a que no se acerca a las preferencias que pueda tener cierto usuario sobre un item, y de todas formas se convierte en un sesgo. Un ejemplo particular de esto son las "cold-start" situaciones, donde ingresa un nuevo item, usuario o comunidad, y se tiene muy pocas calificaciones. Para estos casos es necesario adoptar otras medidas que den espacio a las novedades, que propicie un espacio donde aumente el número de calificaciones, y no incorpore datos calculados de manera artificial.
 
-descripcion del texto 
-el texto con autores nos describe el adgoritmo para solucionar el problema ya quye muchos quieren y la solucion es
-
-me parecio interesante y crítica
-yo como usuario nunca he visto la evaluacion de com
-
-otra opinion interesando a favor o en contra
-me gusta ver mas el contenido su significado que tanta teoría
-
-Cierre
-
-## Collaborative
+En conclusión, los autores J. Ben Schafer, Dan Frankowski, Jon Herlocker, y Shilad redactan un texto bastante completo, donde dan el espacio para explicar los distintos algoritmos existentes sobre el filtrado colaborativo, y realizan alcances en cuanto a comparaciones con otros algoritmos, las métricas de evaluación y ciertos problemas que se encuentran al momento de tratar con datos de la vida real. Sin embargo, más que dar respuestas nos invita a profundizar más el contenido y que el lector analice cuál respuesta le hace más sentido.
