@@ -1,0 +1,17 @@
+## Lectura - Content-Based Recommendation Systems
+
+El sistema de recomendación basado en contenido permite recomendar un item a un usuario según las descripciones del item y los interes del usuario. Para esto es necesario definir y describir el perfil del usuario, los ítems y también la comparación que se realizará entre los dos conceptos anteriores para realizar la recomendación. En este paper se mencionan distintas alternativss de representación de los ítems, los algoritmos adecuados de recomendación para cada representación y por último una evaluación de estos sistemas.
+- Item representation: tabla de base de datos con item y atributos respectivos (conjunto conocido de valores que pueden tomar los atributos), dando la posibilidad de añadir campos adicionales a los que están definidos, que son datos no estructurados con campos de textos libres. A estos últimos es posible ir estructurándolos mediante técnicas.
+- User profile: se necesita un perfil de los intereses del usuario y para esto se puede tener una descripción de los tipos de ítems que le interesan o un historial con las interacciones que ha tenido el usuario en el sistema de recomendaciones (vistas, compras, búsquedas, etc.). Para obtener estos datos manualmente, se hace a través de la personalización del usuario (por medio de una interfaz lo que requiere mucho esfuerzo por parte del usuario) y para obtenerlos del historial del usuario se basan en reglas según el comportamiento de este para recomendar.
+- Aprendizaje de un user model: comentarios explícitos o implícitos permiten entrenar un modelo con categorías binarias (ítems que le gustan al usuario, ítems que no le gustan al usuario)
+
+Los principales algoritmos utilizan una función para modelar los interes de los usuarios y permiten hacer recomendaciones. Estas se basan en una estimación de la probabilidad de que a un usuario le guste un item o una función que prediga directamente un valor de grado de interés.
+- Árboles de decisión e inducción de reglas
+- Métodos de vecinos más cercanos
+- Relevance Feedback and Rocchio’s Algorithm
+- Clasificadores lineales
+- Probabilistic Methods and Naïve Bayes
+
+Un aspecto que me parece interesante mencionar luego de analizar este paper es que a veces el contenido no nos ayuda a querer un ítem, es decir, un usario puede querer que le recomienden cierto ítem por cosas no relacionadas con el contenido, como por ejemplo las calificaciones de otros usuarios. Es por esto que me parece muy interesante el hecho de que estos sistemas puedan complementarse con la opinión de otros usuarios, con la el método de incluír las calificaciones de un sistema colaborativo por ejemplo, por medio de atributos que se vayan estructurando con ciertas técnicas.
+
+En conclusión el artículo me parece bien completo para dar una idea acerca de lo que es el sistema de recomendación basado en contenido, la parte que más me gustó fue la de los métodos probabilísticos y en particular el Naïve Bayes, ya que lo abordan más en profundidad y realizan comparaciones con otras distribuciones de probabilidad. Sin embargo este no es un árticulo destinado a aprender los distintos algoritmos, para tener un conocimiento más completo acerca de esto recomiendo investigar cada algoritmo en profundidad.
